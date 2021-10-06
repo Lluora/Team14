@@ -12,6 +12,7 @@ def main():
 @app.route('/api/recommend', methods=['GET'])
 def show_stars():
     like_star = list(db.puppy.find({},{'_id':False}).sort("like", -1))
+    print(like_star)
     return jsonify({'like': like_star})
 
 
@@ -53,6 +54,7 @@ def write_review():
 def read_reviews():
     name = request.args.get('name')
     reviews = list(db.puppy.find({'title': name}, {'_id': False}))
+    print(reviews)
     return jsonify({'all_reviews': reviews})
 
 

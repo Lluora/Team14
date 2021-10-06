@@ -285,6 +285,9 @@ function showbest() {
                     image : markerImage // 마커 이미지
                 });
 
+
+                alert('title: ' + name)
+
             }
         }
     });
